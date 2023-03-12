@@ -16,6 +16,7 @@ export default function Practice({ route, navigation }) {
   );
 
   const handleAnswerPress = (answerIndex) => {
+    // When an answer is selected, update the selected answer state and the results state
     setSelectedAnswer(answerIndex);
 
     const newResults = [...results];
@@ -26,11 +27,24 @@ export default function Practice({ route, navigation }) {
   };
 
   const handleNextPress = () => {
+    // When the next button is pressed, update the current question state and reset the selected answer state
     setCurrentQuestion(currentQuestion + 1);
     setSelectedAnswer(null);
   };
 
+  const handlePrevPress = () => {
+    // When the prev button is pressed, update the current question state and reset the selected answer state
+    setCurrentQuestion(currentQuestion - 1);
+    setSelectedAnswer(null);
+  };
+
+  const handleHintPress = () => {
+    // You can implement your own hint logic here
+    alert(topic.questions[currentQuestion].hint);
+  };
+
   const handleFinishPress = () => {
+    // When the finish button is pressed, navigate to the practice result screen with the topic and results as parameters
     navigation.navigate("PracticeResult", { topic, results });
   };
 
@@ -40,6 +54,7 @@ export default function Practice({ route, navigation }) {
       <Text style={styles.questionText}>
         {topic.questions[currentQuestion].questionText}
       </Text>
+
       <FlatList
         data={topic.questions[currentQuestion].answers}
         renderItem={({ item, index }) => (
@@ -62,27 +77,51 @@ export default function Practice({ route, navigation }) {
         keyExtractor={(item) => item}
         style={styles.answersContainer}
       />
-      <TouchableOpacity
-        style={[
-          styles.nextButton,
-          selectedAnswer !== null && styles.activeButton,
-        ]}
-        onPress={
-          currentQuestion === topic.questions.length - 1
-            ? handleFinishPress
-            : handleNextPress
-        }
-        disabled={selectedAnswer === null}
-      >
-        <Text
-          style={[
-            styles.nextButtonText,
-            selectedAnswer !== null && styles.activeButtonText,
-          ]}
-        >
-          {currentQuestion === topic.questions.length - 1 ? "Finish" : "Next"}
-        </Text>
-      </TouchableOpacity>
+
+      <View style={styles.bottomButtonsContainer}>
+        <View style={styles.bottomView}>
+          <TouchableOpacity
+            style={[
+              styles.bottomButton,
+              styles.prevButton,
+              currentQuestion === 0 && styles.disabledButton,
+            ]}
+            onPress={handlePrevPress}
+            disabled={currentQuestion === 0}
+          >
+            <Text style={styles.bottomButtonText}>Prev</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.bottomView}>
+          <TouchableOpacity style={styles.hintButton} onPress={handleHintPress}>
+            <Text style={styles.bottomButtonText}>?</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.bottomView}>
+          <TouchableOpacity
+            style={[
+              styles.bottomButton,
+              styles.nextButton,
+              selectedAnswer === null && styles.disabledButton,
+              currentQuestion === topic.questions.length - 1 &&
+                selectedAnswer !== null &&
+                styles.lastButton,
+            ]}
+            onPress={
+              currentQuestion === topic.questions.length - 1
+                ? handleFinishPress
+                : handleNextPress
+            }
+            disabled={selectedAnswer === null}
+          >
+            <Text style={styles.bottomButtonText}>
+              {currentQuestion === topic.questions.length - 1
+                ? "Finish"
+                : "Next"}
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 }
@@ -90,96 +129,91 @@ export default function Practice({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
     padding: 20,
   },
-  title: {
+  topicTitle: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
   },
-  questionContainer: {
-    backgroundColor: "#f2f2f2",
-    borderRadius: 10,
-    marginBottom: 20,
-    padding: 20,
-    alignItems: "center",
-    justifyContent: "center",
-  },
   questionText: {
     fontSize: 20,
-    fontWeight: "bold",
     marginBottom: 20,
-    textAlign: "center",
   },
-  answerButtonContainer: {
+  answerButton: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 10,
+  },
+  selectedAnswerButton: {
+    backgroundColor: "#4CAF50",
+    borderColor: "#4CAF50",
+  },
+  correctAnswerButton: {
+    backgroundColor: "#4CAF50",
+    borderColor: "#4CAF50",
+  },
+  incorrectAnswerButton: {
+    backgroundColor: "#F44336",
+    borderColor: "#F44336",
+  },
+  answerButtonText: {
+    fontSize: 18,
+    color: "#333",
+  },
+  answersContainer: {
+    flex: 1,
+  },
+  bottomButtonsContainer: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     marginTop: 20,
     width: "100%",
   },
-  answerButton: {
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    padding: 20,
-    width: "40%",
-  },
-  answerButtonText: {
-    fontSize: 16,
-    textAlign: "center",
-  },
-  selectedAnswerButton: {
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    padding: 20,
-    width: "40%",
-    borderWidth: 2,
-    borderColor: "#000080",
-  },
-  selectedAnswerButtonText: {
-    fontSize: 16,
-    textAlign: "center",
-    color: "#000080",
-  },
-  correctAnswerButton: {
-    backgroundColor: "#DFF2BF",
-    borderRadius: 10,
-    padding: 20,
-    width: "40%",
-  },
-  correctAnswerButtonText: {
-    fontSize: 16,
-    textAlign: "center",
-    color: "#4F8A10",
-  },
-  wrongAnswerButton: {
-    backgroundColor: "#FFBABA",
-    borderRadius: 10,
-    padding: 20,
-    width: "40%",
-  },
-  wrongAnswerButtonText: {
-    fontSize: 16,
-    textAlign: "center",
-    color: "#D8000C",
-  },
-  questionNumberIndicatorContainer: {
-    flexDirection: "row",
+  bottomView: {
+    flex: 1,
     alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 20,
   },
-  questionNumberIndicator: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    marginHorizontal: 5,
+  bottomButton: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 10,
+    padding: 10,
+    width: "80%",
+    alignItems: "center",
   },
-  questionNumberIndicatorActive: {
-    backgroundColor: "#000080",
+  prevButton: {
+    backgroundColor: "#2196F3",
+    borderColor: "#2196F3",
+    marginBottom: 10,
   },
-  questionNumberIndicatorInactive: {
-    backgroundColor: "#D3D3D3",
+  disabledButton: {
+    opacity: 0.5,
+  },
+  hintButton: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 10,
+    padding: 10,
+    width: "80%",
+    alignItems: "center",
+  },
+  nextButton: {
+    backgroundColor: "#4CAF50",
+    borderColor: "#4CAF50",
+    marginBottom: 10,
+  },
+  lastButton: {
+    backgroundColor: "#4CAF50",
+    borderColor: "#4CAF50",
+    marginBottom: 10,
+  },
+  bottomButtonText: {
+    fontSize: 18,
+    color: "#333",
   },
 });

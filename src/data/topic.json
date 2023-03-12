@@ -1,7 +1,442 @@
 [
-  { "topicName": "Traffic Signs", "numQuestions": 3 },
-  { "topicName": "Lane Changes", "numQuestions": 3 },
-  { "topicName": "Right of Way", "numQuestions": 3 },
-  { "topicName": "Speed Limits", "numQuestions": 3 },
-  { "topicName": "Safe Following Distance", "numQuestions": 3 }
+  {
+    "topicName": "Alertness",
+    "questions": [
+      {
+        "questionText": "What is fatigue?",
+        "answers": [
+          "Feeling relaxed and refreshed",
+          "Feeling tired and lacking energy",
+          "Feeling alert and attentive"
+        ],
+        "correctAnswer": 1,
+        "hint": "Fatigue is a state of feeling tired and lacking energy that can affect your ability to drive safely."
+      },
+      {
+        "questionText": "What can cause you to become drowsy while driving?",
+        "answers": [
+          "Long periods of driving without a break",
+          "Driving during the day",
+          "Driving on a busy road"
+        ],
+        "correctAnswer": 0,
+        "hint": "Driving for long periods without taking a break can cause you to become drowsy and affect your ability to drive safely."
+      },
+      {
+        "questionText": "What should you do if you feel drowsy while driving?",
+        "answers": [
+          "Stop driving as soon as possible and take a nap",
+          "Turn up the radio to stay awake",
+          "Drink coffee to stay awake"
+        ],
+        "correctAnswer": 0,
+        "hint": "If you feel drowsy while driving, you should stop driving as soon as possible and take a nap, or do something to help you stay alert, such as drinking coffee or taking a short walk."
+      }
+    ]
+  },
+  {
+    "topicName": "Attitude",
+    "questions": [
+      {
+        "questionText": "What is road rage?",
+        "answers": [
+          "A feeling of happiness while driving",
+          "A feeling of anger and frustration while driving",
+          "A feeling of sadness and loneliness while driving"
+        ],
+        "correctAnswer": 1,
+        "hint": "Road rage is a feeling of anger and frustration that can arise while driving, often due to other drivers' actions or traffic conditions."
+      },
+      {
+        "questionText": "What should you do if you experience road rage?",
+        "answers": [
+          "Ignore the other driver and keep driving safely",
+          "Confront the other driver and try to resolve the situation",
+          "Speed up and try to get away from the other driver"
+        ],
+        "correctAnswer": 0,
+        "hint": "If you experience road rage, you should ignore the other driver and focus on driving safely. Avoid confrontations and try to stay calm."
+      },
+      {
+        "questionText": "How can you avoid road rage?",
+        "answers": [
+          "Listen to calming music while driving",
+          "Plan your route and avoid busy roads",
+          "Stay calm and patient while driving"
+        ],
+        "correctAnswer": 2,
+        "hint": "You can avoid road rage by staying calm and patient while driving, planning your route to avoid busy roads, and listening to calming music or other relaxation techniques."
+      }
+    ]
+  },
+  {
+    "topicName": "Safety and Your Vehicle",
+    "questions": [
+      {
+        "questionText": "What should you do if your vehicle starts to skid?",
+        "answers": [
+          "Brake hard and steer in the opposite direction",
+          "Accelerate hard and steer in the opposite direction",
+          "Steer in the direction of the skid and gently apply the brakes"
+        ],
+        "correctAnswer": 2,
+        "hint": "If your vehicle starts to skid, you should steer in the direction of the skid and gently apply the brakes. Do not brake hard or accelerate."
+      },
+      {
+        "questionText": "What is the minimum legal tire tread depth?",
+        "answers": ["1.0mm", "1.6mm", "2.0mm"],
+        "correctAnswer": 1,
+        "hint": "The minimum legal tire tread depth is 1.6mm. Tires with less than this amount of tread may not provide adequate grip and can be dangerous."
+      },
+      {
+        "questionText": "When should you check the oil level in your vehicle?",
+        "answers": ["Every year", "Every 5,000 miles", "Every month"],
+        "correctAnswer": 2,
+        "hint": "You should check the oil level in your vehicle every month or before long journeys. Low oil levels can cause damage to your engine."
+      }
+    ]
+  },
+  {
+    "topicName": "Safety Margins",
+    "questions": [
+      {
+        "questionText": "What is the two-second rule?",
+        "answers": [
+          "A method of measuring your speed",
+          "A method of checking your tire pressure",
+          "A method of maintaining a safe following distance"
+        ],
+        "correctAnswer": 2,
+        "hint": "The two-second rule is a method of maintaining a safe following distance behind the vehicle in front of you. You should keep a distance of at least two seconds between your vehicle and the vehicle in front of you."
+      },
+      {
+        "questionText": "What is the recommended stopping distance in wet or icy conditions?",
+        "answers": [
+          "Two times the normal stopping distance",
+          "Three times the normal stopping distance",
+          "Four times the normal stopping distance"
+        ],
+        "correctAnswer": 2,
+        "hint": "In wet or icy conditions, you should increase your stopping distance to at least four times the normal distance. This will give you more time to react and stop your vehicle safely."
+      },
+      {
+        "questionText": "What is the legal minimum depth for tire tread?",
+        "answers": ["1.0mm", "1.6mm", "2.0mm"],
+        "correctAnswer": 1,
+        "hint": "The legal minimum depth for tire tread is 1.6mm. Tires with less than this amount of tread may not provide adequate grip and can be dangerous."
+      }
+    ]
+  },
+  {
+    "topicName": "Hazard Awareness",
+    "questions": [
+      {
+        "questionText": "What is a hazard?",
+        "answers": [
+          "Something that is safe and not a risk to drivers",
+          "Something that is a risk to drivers",
+          "Something that is not related to driving"
+        ],
+        "correctAnswer": 1,
+        "hint": "A hazard is something that is a risk to drivers and can cause an accident or harm."
+      },
+      {
+        "questionText": "What should you do if you see a hazard ahead?",
+        "answers": [
+          "Speed up to get past the hazard quickly",
+          "Slow down and be prepared to stop if necessary",
+          "Ignore the hazard and keep driving"
+        ],
+        "correctAnswer": 1,
+        "hint": "If you see a hazard ahead, you should slow down and be prepared to stop if necessary. Ignoring the hazard can be dangerous."
+      },
+      {
+        "questionText": "What is the purpose of a hazard warning signal?",
+        "answers": [
+          "To indicate that you are changing lanes",
+          "To indicate that you are stopping or slowing down",
+          "To indicate that you are accelerating"
+        ],
+        "correctAnswer": 1,
+        "hint": "The hazard warning signal is used to indicate that you are stopping or slowing down due to a hazard or an emergency situation."
+      }
+    ]
+  },
+  {
+    "topicName": "Vulnerable Road Users",
+    "questions": [
+      {
+        "questionText": "What is the speed limit in a built-up area?",
+        "answers": ["20 mph", "30 mph", "40 mph"],
+        "correctAnswer": 1,
+        "hint": "The speed limit in a built-up area is 30 mph, unless otherwise indicated by signs or road markings."
+      },
+      {
+        "questionText": "What should you do when approaching a pedestrian crossing?",
+        "answers": [
+          "Speed up to get past the crossing quickly",
+          "Slow down and be prepared to stop if necessary",
+          "Ignore the crossing and keep driving"
+        ],
+        "correctAnswer": 1,
+        "hint": "When approaching a pedestrian crossing, you should slow down and be prepared to stop if necessary. Ignoring the crossing can be dangerous to pedestrians."
+      },
+      {
+        "questionText": "What is a vulnerable road user?",
+        "answers": [
+          "A pedestrian",
+          "A cyclist",
+          "A motorcyclist",
+          "All of the above"
+        ],
+        "correctAnswer": 3,
+        "hint": "A vulnerable road user is someone who is more likely to be injured or killed in a traffic accident, such as pedestrians, cyclists, and motorcyclists."
+      }
+    ]
+  },
+  {
+    "topicName": "Other Types of Vehicles",
+    "questions": [
+      {
+        "questionText": "What is the maximum speed limit for a vehicle towing a trailer on a motorway?",
+        "answers": ["40 mph", "50 mph", "60 mph"],
+        "correctAnswer": 2,
+        "hint": "The maximum speed limit for a vehicle towing a trailer on a motorway is 60 mph. However, you should always drive at a speed that is safe and appropriate for the road and weather conditions."
+      },
+      {
+        "questionText": "What should you do when overtaking a cyclist?",
+        "answers": [
+          "Sound your horn to alert them",
+          "Leave plenty of room and give them plenty of space",
+          "Drive as close as possible to them"
+        ],
+        "correctAnswer": 1,
+        "hint": "When overtaking a cyclist, you should leave plenty of room and give them plenty of space. This will help to prevent accidents and ensure the safety of the cyclist."
+      },
+      {
+        "questionText": "What is the maximum weight allowed for a vehicle without a commercial license?",
+        "answers": ["3,500 kg", "4,500 kg", "5,500 kg"],
+        "correctAnswer": 0,
+        "hint": "The maximum weight allowed for a vehicle without a commercial license is 3,500 kg. Vehicles that weigh more than this require a commercial license to operate."
+      }
+    ]
+  },
+  {
+    "topicName": "Vehicle Handling",
+    "questions": [
+      {
+        "questionText": "What should you do when driving in heavy rain or snow?",
+        "answers": [
+          "Use your high beam headlights",
+          "Reduce your speed and increase your following distance",
+          "Drive as fast as you normally would"
+        ],
+        "correctAnswer": 1,
+        "hint": "When driving in heavy rain or snow, you should reduce your speed and increase your following distance. This will give you more time to react to hazards and help you maintain control of your vehicle."
+      },
+      {
+        "questionText": "What is aquaplaning?",
+        "answers": [
+          "When your vehicle slides on ice",
+          "When your brakes fail",
+          "When your tires lose contact with the road due to water"
+        ],
+        "correctAnswer": 2,
+        "hint": "Aquaplaning is when your tires lose contact with the road due to water, causing you to lose control of your vehicle. This can happen when driving too fast on wet roads, and can be dangerous."
+      },
+      {
+        "questionText": "What is the purpose of anti-lock brakes?",
+        "answers": [
+          "To prevent skidding while braking",
+          "To increase the vehicle's top speed",
+          "To improve fuel efficiency"
+        ],
+        "correctAnswer": 0,
+        "hint": "Anti-lock brakes are designed to prevent skidding while braking. They work by automatically pumping the brakes to prevent the wheels from locking up."
+      }
+    ]
+  },
+  {
+    "topicName": "Motorway Rules",
+    "questions": [
+      {
+        "questionText": "What is the minimum speed limit on a motorway?",
+        "answers": [
+          "30 mph",
+          "40 mph",
+          "50 mph",
+          "There is no minimum speed limit"
+        ],
+        "correctAnswer": 3,
+        "hint": "There is no minimum speed limit on a motorway, but you should always drive at a safe and appropriate speed for the road and traffic conditions."
+      },
+      {
+        "questionText": "What should you do if you break down on a motorway?",
+        "answers": [
+          "Stay in your vehicle and wait for help",
+          "Exit your vehicle and wait on the side of the road",
+          "Flag down passing motorists for help"
+        ],
+        "correctAnswer": 0,
+        "hint": "If you break down on a motorway, you should stay in your vehicle and wait for help to arrive. Do not attempt to exit your vehicle or flag down passing motorists, as this can be dangerous."
+      },
+      {
+        "questionText": "What is the national speed limit on a motorway?",
+        "answers": ["50 mph", "60 mph", "70 mph"],
+        "correctAnswer": 2,
+        "hint": "The national speed limit on a motorway is 70 mph, unless otherwise indicated by signs or road markings."
+      }
+    ]
+  },
+  {
+    "topicName": "Rules of the Road",
+    "questions": [
+      {
+        "questionText": "What is the legal alcohol limit for drivers in England, Wales, and Northern Ireland?",
+        "answers": ["0.2g/l of blood", "0.5g/l of blood", "0.8g/l of blood"],
+        "correctAnswer": 1,
+        "hint": "The legal alcohol limit for drivers in England, Wales, and Northern Ireland is 0.5g/l of blood. This is equivalent to approximately one small glass of wine or one pint of beer."
+      },
+      {
+        "questionText": "What is the legal alcohol limit for drivers in Scotland?",
+        "answers": ["0.2g/l of blood", "0.5g/l of blood", "0.8g/l of blood"],
+        "correctAnswer": 0,
+        "hint": "The legal alcohol limit for drivers in Scotland is 0.2g/l of blood. This is lower than the limit in England, Wales, and Northern Ireland."
+      },
+      {
+        "questionText": "What should you do if you see a red triangle warning sign on the road?",
+        "answers": [
+          "Slow down and be prepared to stop if necessary",
+          "Ignore the sign and keep driving",
+          "Speed up to get past the sign quickly"
+        ],
+        "correctAnswer": 0,
+        "hint": "If you see a red triangle warning sign on the road, you should slow down and be prepared to stop if necessary. The sign indicates a hazard or danger ahead."
+      }
+    ]
+  },
+  {
+    "topicName": "Road and Traffic Signs",
+    "questions": [
+      {
+        "questionText": "What does a red and white circular sign with a line through it mean?",
+        "answers": ["No entry", "Stop", "No overtaking"],
+        "correctAnswer": 2,
+        "hint": "A red and white circular sign with a line through it indicates that overtaking is not allowed on the road where the sign is displayed."
+      },
+      {
+        "questionText": "What does a blue circular sign with a white arrow pointing downwards mean?",
+        "answers": ["One-way street", "No entry", "No parking"],
+        "correctAnswer": 0,
+        "hint": "A blue circular sign with a white arrow pointing downwards indicates that the road is a one-way street and traffic must travel in the direction of the arrow."
+      },
+      {
+        "questionText": "What does a brown sign with a white tent and campfire symbol indicate?",
+        "answers": [
+          "A campsite or caravan site",
+          "A tourist attraction",
+          "A scenic route"
+        ],
+        "correctAnswer": 0,
+        "hint": "A brown sign with a white tent and campfire symbol indicates the location of a campsite or caravan site."
+      }
+    ]
+  },
+  {
+    "topicName": "Essential Documents",
+    "questions": [
+      {
+        "questionText": "What document must you have to legally drive a vehicle?",
+        "answers": ["A driving license", "A passport", "A birth certificate"],
+        "correctAnswer": 0,
+        "hint": "To legally drive a vehicle, you must have a driving license that is valid for the type of vehicle you are driving."
+      },
+      {
+        "questionText": "What documents must you have with you when driving a vehicle?",
+        "answers": [
+          "Insurance certificate, driving license, and MOT certificate",
+          "Passport, driving license, and insurance certificate",
+          "Birth certificate, driving license, and insurance certificate"
+        ],
+        "correctAnswer": 0,
+        "hint": "When driving a vehicle, you must have your driving license, insurance certificate, and MOT certificate (if applicable) with you."
+      },
+      {
+        "questionText": "What is the penalty for driving without insurance?",
+        "answers": [
+          "A fine and points on your driving license",
+          "A warning from the police",
+          "A ban from driving"
+        ],
+        "correctAnswer": 0,
+        "hint": "Driving without insurance is illegal and can result in a fine and points on your driving license. In some cases, your vehicle may also be seized."
+      }
+    ]
+  },
+  {
+    "topicName": "Incidents, Accidents, and Emergencies",
+    "questions": [
+      {
+        "questionText": "What should you do if you are involved in a minor traffic accident?",
+        "answers": [
+          "Move your vehicle off the road and call the police",
+          "Exchange details with the other driver and leave the scene",
+          "Stop your vehicle and turn off the engine"
+        ],
+        "correctAnswer": 1,
+        "hint": "If you are involved in a minor traffic accident, you should exchange details with the other driver and leave the scene as soon as it is safe to do so."
+      },
+      {
+        "questionText": "What should you do if you come across an accident while driving?",
+        "answers": [
+          "Stop and offer assistance",
+          "Drive past as quickly as possible",
+          "Call the police and report the accident"
+        ],
+        "correctAnswer": 0,
+        "hint": "If you come across an accident while driving, you should stop and offer assistance if it is safe to do so. If necessary, call the emergency services for further assistance."
+      },
+      {
+        "questionText": "What should you do if your vehicle breaks down on a busy road?",
+        "answers": [
+          "Stay in your vehicle and wait for help",
+          "Exit your vehicle and stand on the side of the road",
+          "Flag down passing motorists for help"
+        ],
+        "correctAnswer": 0,
+        "hint": "If your vehicle breaks down on a busy road, you should stay in your vehicle and wait for help to arrive. Do not attempt to exit your vehicle or flag down passing motorists, as this can be dangerous."
+      }
+    ]
+  },
+  {
+    "topicName": "Vehicle Loading",
+    "questions": [
+      {
+        "questionText": "What is the maximum weight a vehicle can carry?",
+        "answers": ["1,000 kg", "2,000 kg", "3,500 kg"],
+        "correctAnswer": 2,
+        "hint": "The maximum weight a vehicle can carry is 3,500 kg. This includes the weight of the vehicle, passengers, and any goods or cargo being transported."
+      },
+      {
+        "questionText": "What is the correct way to load a vehicle?",
+        "answers": [
+          "Load heavier items on top of lighter items",
+          "Load lighter items on top of heavier items",
+          "Load items randomly to save time"
+        ],
+        "correctAnswer": 1,
+        "hint": "When loading a vehicle, you should load lighter items on top of heavier items. This will help to ensure that the weight is evenly distributed and that the vehicle remains stable while driving."
+      },
+      {
+        "questionText": "What is the penalty for overloading a vehicle?",
+        "answers": [
+          "A fine and points on your driving license",
+          "A warning from the police",
+          "A ban from driving"
+        ],
+        "correctAnswer": 0,
+        "hint": "Overloading a vehicle is illegal and can result in a fine and points on your driving license. In some cases, your vehicle may also be impounded."
+      }
+    ]
+  }
 ]
