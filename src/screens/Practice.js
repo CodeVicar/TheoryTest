@@ -8,44 +8,59 @@ import {
 } from "react-native";
 
 export default function Practice({ route, navigation }) {
+  // Get the topic from the navigation params
   const { topic } = route.params;
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
+
+  // Initialize state variables
+  const [currentQuestion, setCurrentQuestion] = useState(0); // Index of the current question
+  const [selectedAnswer, setSelectedAnswer] = useState(null); // Index of the selected answer for the current question
   const [results, setResults] = useState(
+    // Array of results for each question (either 'correct', 'incorrect', or 'unanswered')
     Array(topic.questions.length).fill(null)
   );
+  const [answered, setAnswered] = useState(false); // Whether the user has answered the current question
 
+  // Function to handle when the user selects an answer
   const handleAnswerPress = (answerIndex) => {
-    // When an answer is selected, update the selected answer state and the results state
-    setSelectedAnswer(answerIndex);
+    setSelectedAnswer(answerIndex); // Set the index of the selected answer
+    setAnswered(true); // Set answered to true
 
-    const newResults = [...results];
+    const newResults = [...results]; // Copy the current results array
     const isCorrect =
-      answerIndex === topic.questions[currentQuestion].correctAnswer;
-    newResults[currentQuestion] = isCorrect ? "correct" : "incorrect";
-    setResults(newResults);
+      answerIndex === topic.questions[currentQuestion].correctAnswer; // Check if the selected answer is correct
+    newResults[currentQuestion] = isCorrect ? "correct" : "incorrect"; // Update the results array with the result for the current question
+    setResults(newResults); // Set the updated results array
   };
 
+  // Function to handle when the user presses the Next button
   const handleNextPress = () => {
-    // When the next button is pressed, update the current question state and reset the selected answer state
-    setCurrentQuestion(currentQuestion + 1);
-    setSelectedAnswer(null);
+    setCurrentQuestion(currentQuestion + 1); // Move to the next question
+    setSelectedAnswer(null); // Reset the selected answer
+    setAnswered(false); // Set answered to false
+
+    // If the user hasn't selected an answer, mark the question as unanswered
+    if (selectedAnswer === null) {
+      const newResults = [...results]; // Copy the current results array
+      newResults[currentQuestion] = "unanswered"; // Set the result for the current question to 'unanswered'
+      setResults(newResults); // Set the updated results array
+    }
   };
 
+  // Function to handle when the user presses the Prev button
   const handlePrevPress = () => {
-    // When the prev button is pressed, update the current question state and reset the selected answer state
-    setCurrentQuestion(currentQuestion - 1);
-    setSelectedAnswer(null);
+    setCurrentQuestion(currentQuestion - 1); // Move to the previous question
+    setSelectedAnswer(null); // Reset the selected answer
+    setAnswered(false); // Set answered to false
   };
 
+  // Function to handle when the user presses the Hint button
   const handleHintPress = () => {
-    // You can implement your own hint logic here
-    alert(topic.questions[currentQuestion].hint);
+    alert(topic.questions[currentQuestion].hint); // Show a popup with the hint for the current question
   };
 
+  // Function to handle when the user presses the Finish button
   const handleFinishPress = () => {
-    // When the finish button is pressed, navigate to the practice result screen with the topic and results as parameters
-    navigation.navigate("PracticeResult", { topic, results });
+    navigation.navigate("PracticeResult", { topic, results }); // Navigate to the PracticeResult screen with the topic and results as params
   };
 
   return (
@@ -112,7 +127,7 @@ export default function Practice({ route, navigation }) {
                 ? handleFinishPress
                 : handleNextPress
             }
-            disabled={selectedAnswer === null}
+            disabled={false}
           >
             <Text style={styles.bottomButtonText}>
               {currentQuestion === topic.questions.length - 1
