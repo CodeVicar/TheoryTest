@@ -5,6 +5,9 @@ import {
   View,
   TouchableOpacity,
   FlatList,
+  SafeAreaView,
+  Modal,
+  Pressable,
 } from "react-native";
 
 export default function Practice({ route, navigation }) {
@@ -54,8 +57,10 @@ export default function Practice({ route, navigation }) {
   };
 
   // Function to handle when the user presses the Hint button
+
+  // Function to handle when the user presses the Hint button
   const handleHintPress = () => {
-    alert(topic.questions[currentQuestion].hint); // Show a popup with the hint for the current question
+    alert(topic.questions[currentQuestion].hint); // Show an alert with the hint for the current question
   };
 
   // Function to handle when the user presses the Finish button
@@ -64,80 +69,86 @@ export default function Practice({ route, navigation }) {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.topicTitle}>{topic.topicName}</Text>
-      <Text style={styles.questionText}>
-        {topic.questions[currentQuestion].questionText}
-      </Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
+        <Text style={styles.topicTitle}>{topic.topicName}</Text>
 
-      <FlatList
-        data={topic.questions[currentQuestion].answers}
-        renderItem={({ item, index }) => (
-          <TouchableOpacity
-            style={[
-              styles.answerButton,
-              selectedAnswer === index && styles.selectedAnswerButton,
-              results[currentQuestion] === "correct" &&
-                selectedAnswer === index &&
-                styles.correctAnswerButton,
-              results[currentQuestion] === "incorrect" &&
-                selectedAnswer === index &&
-                styles.incorrectAnswerButton,
-            ]}
-            onPress={() => handleAnswerPress(index)}
-          >
-            <Text style={styles.answerButtonText}>{item}</Text>
-          </TouchableOpacity>
-        )}
-        keyExtractor={(item) => item}
-        style={styles.answersContainer}
-      />
+        <Text style={styles.questionText}>
+          {topic.questions[currentQuestion].questionText}
+        </Text>
 
-      <View style={styles.bottomButtonsContainer}>
-        <View style={styles.bottomView}>
-          <TouchableOpacity
-            style={[
-              styles.bottomButton,
-              styles.prevButton,
-              currentQuestion === 0 && styles.disabledButton,
-            ]}
-            onPress={handlePrevPress}
-            disabled={currentQuestion === 0}
-          >
-            <Text style={styles.bottomButtonText}>Prev</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.bottomView}>
-          <TouchableOpacity style={styles.hintButton} onPress={handleHintPress}>
-            <Text style={styles.bottomButtonText}>?</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.bottomView}>
-          <TouchableOpacity
-            style={[
-              styles.bottomButton,
-              styles.nextButton,
-              selectedAnswer === null && styles.disabledButton,
-              currentQuestion === topic.questions.length - 1 &&
-                selectedAnswer !== null &&
-                styles.lastButton,
-            ]}
-            onPress={
-              currentQuestion === topic.questions.length - 1
-                ? handleFinishPress
-                : handleNextPress
-            }
-            disabled={false}
-          >
-            <Text style={styles.bottomButtonText}>
-              {currentQuestion === topic.questions.length - 1
-                ? "Finish"
-                : "Next"}
-            </Text>
-          </TouchableOpacity>
+        <FlatList
+          data={topic.questions[currentQuestion].answers}
+          renderItem={({ item, index }) => (
+            <TouchableOpacity
+              style={[
+                styles.answerButton,
+                selectedAnswer === index && styles.selectedAnswerButton,
+                // results[currentQuestion] === "correct" &&
+                //   selectedAnswer === index &&
+                //   styles.correctAnswerButton,
+                // results[currentQuestion] === "incorrect" &&
+                //   selectedAnswer === index &&
+                //   styles.incorrectAnswerButton,
+              ]}
+              onPress={() => handleAnswerPress(index)}
+            >
+              <Text style={styles.answerButtonText}>{item}</Text>
+            </TouchableOpacity>
+          )}
+          keyExtractor={(item) => item}
+          style={styles.answersContainer}
+        />
+
+        <View style={styles.bottomButtonsContainer}>
+          <View style={styles.bottomView}>
+            <TouchableOpacity
+              style={[
+                styles.bottomButton,
+                styles.prevButton,
+                currentQuestion === 0 && styles.disabledButton,
+              ]}
+              onPress={handlePrevPress}
+              disabled={currentQuestion === 0}
+            >
+              <Text style={styles.bottomButtonText}>Prev</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.bottomView}>
+            <TouchableOpacity
+              style={styles.hintButton}
+              onPress={handleHintPress}
+            >
+              <Text style={styles.bottomButtonText}>?</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.bottomView}>
+            <TouchableOpacity
+              style={[
+                styles.bottomButton,
+                styles.nextButton,
+                selectedAnswer === null && styles.disabledButton,
+                currentQuestion === topic.questions.length - 1 &&
+                  selectedAnswer !== null &&
+                  styles.lastButton,
+              ]}
+              onPress={
+                currentQuestion === topic.questions.length - 1
+                  ? handleFinishPress
+                  : handleNextPress
+              }
+              disabled={false}
+            >
+              <Text style={styles.bottomButtonText}>
+                {currentQuestion === topic.questions.length - 1
+                  ? "Finish"
+                  : "Next"}
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -146,7 +157,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
   },
   topicTitle: {
     fontSize: 24,
@@ -161,11 +171,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 10,
-    padding: 10,
+    padding: 20,
     marginBottom: 10,
   },
   selectedAnswerButton: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: "silver",
     borderColor: "#4CAF50",
   },
   correctAnswerButton: {

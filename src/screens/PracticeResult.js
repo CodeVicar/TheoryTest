@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView, FlatList } from "react-native";
 import ProgressCircle from "react-native-progress-circle";
+//import Ionicons
 
 export default function PracticeResult({ route }) {
   const { topic, results } = route.params;
@@ -144,6 +145,7 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     flex: 1,
+    backgroundColor: "#fff",
   },
   questionContainer: {
     backgroundColor: "#f2f2f2",

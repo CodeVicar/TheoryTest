@@ -4,10 +4,9 @@ import React from "react";
 export default function MockTest({ navigation }) {
   return (
     <View>
-      <Text>MockTest</Text>
-
+      <Text>Hello World</Text>
       <Pressable onPress={() => navigation.navigate("Home")}>
-        <Text>Home</Text>
+        <Text>Go to Home</Text>
       </Pressable>
     </View>
   );
