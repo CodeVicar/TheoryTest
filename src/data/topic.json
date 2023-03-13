@@ -12,6 +12,101 @@
         "correctAnswer": 1,
         "hint": "Fatigue is a state of feeling tired and lacking energy that can affect your ability to drive safely."
       },
+
+      {
+        "questionText": "What is the recommended length of a break to prevent driver fatigue?",
+        "answers": [
+          "15 minutes every 2 hours",
+          "30 minutes every 4 hours",
+          "1 hour every 6 hours"
+        ],
+        "correctAnswer": 0,
+        "hint": "Experts recommend taking a break of at least 15 minutes every two hours of driving to prevent driver fatigue."
+      },
+
+      {
+        "questionText": "What is the impact of driving at night on alertness?",
+        "answers": [
+          "Driving at night has no impact on alertness.",
+          "Driving at night can cause driver fatigue.",
+          "Driving at night can increase alertness."
+        ],
+        "correctAnswer": 1,
+        "hint": "Driving at night can disrupt your circadian rhythm, making you feel more tired and increasing the risk of driver fatigue."
+      },
+      {
+        "questionText": "What is the impact of low blood sugar on alertness?",
+        "answers": [
+          "Low blood sugar can increase alertness.",
+          "Low blood sugar can cause driver fatigue.",
+          "Low blood sugar has no impact on alertness."
+        ],
+        "correctAnswer": 1,
+        "hint": "Low blood sugar can cause fatigue and drowsiness, which can impact your alertness while driving."
+      },
+
+      {
+        "questionText": "What is the role of exercise in reducing driver fatigue?",
+        "answers": [
+          "Exercise has no impact on driver fatigue.",
+          "Exercise can increase driver fatigue.",
+          "Exercise can reduce driver fatigue."
+        ],
+        "correctAnswer": 2,
+        "hint": "Exercise can help boost energy levels, reduce stress, and promote better sleep, all of which can help reduce driver fatigue."
+      },
+
+      {
+        "questionText": "What is the impact of loud music on driver alertness?",
+        "answers": [
+          "Loud music can increase driver alertness.",
+          "Loud music can cause driver fatigue.",
+          "Loud music has no impact on driver alertness."
+        ],
+        "correctAnswer": 1,
+        "hint": "Loud music can be distracting and increase mental fatigue, leading to driver fatigue."
+      },
+
+      {
+        "questionText": "What is the recommended amount of sleep per night to maintain alertness?",
+        "answers": ["4-5 hours", "6-7 hours", "8-9 hours"],
+        "correctAnswer": 2,
+        "hint": "Most adults need 7-9 hours of sleep per night to feel alert and rested."
+      },
+
+      {
+        "questionText": "What is the impact of dehydration on driver alertness?",
+        "answers": [
+          "Dehydration can increase driver alertness.",
+          "Dehydration can cause driver fatigue.",
+          "Dehydration has no impact on driver alertness."
+        ],
+        "correctAnswer": 1,
+        "hint": "Dehydration can cause fatigue and drowsiness, which can impact your alertness while driving."
+      },
+
+      {
+        "questionText": "What is the impact of driving on an empty stomach on alertness?",
+        "answers": [
+          "Driving on an empty stomach can increase alertness.",
+          "Driving on an empty stomach can cause driver fatigue.",
+          "Driving on an empty stomach has no impact on alertness."
+        ],
+        "correctAnswer": 1,
+        "hint": "Driving on an empty stomach can cause low blood sugar and fatigue, which can impact your alertness while driving."
+      },
+
+      {
+        "questionText": "What is the impact of medication on driver alertness?",
+        "answers": [
+          "Medication has no impact on driver alertness.",
+          "Medication can increase driver alertness.",
+          "Medication can cause driver fatigue."
+        ],
+        "correctAnswer": 2,
+        "hint": "Some medications can cause drowsiness and fatigue, which can impact your alertness while driving."
+      },
+
       {
         "questionText": "What can cause you to become drowsy while driving?",
         "answers": [

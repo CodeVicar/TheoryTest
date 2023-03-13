@@ -9,6 +9,7 @@ import {
   Modal,
   Pressable,
 } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 export default function Practice({ route, navigation }) {
   // Get the topic from the navigation params
@@ -71,7 +72,12 @@ export default function Practice({ route, navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
-        <Text style={styles.topicTitle}>{topic.topicName}</Text>
+        <View style={styles.topHeader}>
+          <Text style={styles.questionNumber}>
+            Question {currentQuestion + 1} of {topic.questions.length}
+          </Text>
+          <Text style={styles.topicTitle}>{topic.topicName}</Text>
+        </View>
 
         <Text style={styles.questionText}>
           {topic.questions[currentQuestion].questionText}
@@ -158,10 +164,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  topHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 20,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  questionNumber: {
+    fontSize: 18,
+    color: "#333",
+
+    marginHorizontal: 20,
+  },
   topicTitle: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
+    fontSize: 20,
+    marginHorizontal: 20,
   },
   questionText: {
     fontSize: 20,
@@ -173,9 +191,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 20,
     marginBottom: 10,
+    backgroundColor: "silver",
   },
   selectedAnswerButton: {
-    backgroundColor: "silver",
+    backgroundColor: "lightblue",
     borderColor: "#4CAF50",
   },
   correctAnswerButton: {
